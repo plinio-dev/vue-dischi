@@ -26,6 +26,24 @@ var app = new Vue ({
           }
         }
       });
+    },
+    computed: {
+      sorted: function () {
+        function compare( a, b ) {
+            if ( a.year< b.year ){
+              return -1;
+            }
+            if ( a.year > b.year ){
+              return 1;
+            }
+            return 0;
+          }
+
+          return this.albums.sort( compare );
+      }
     }
+
+
+
 
 });

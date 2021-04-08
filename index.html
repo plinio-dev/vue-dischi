@@ -16,7 +16,6 @@
 </head>
 <body>
   <div id="app" >
-
     <header>
       <div class="container">
         <img src="img/download.png" alt="logo">
@@ -30,14 +29,13 @@
     </div>
 
     <div class="cds-container">
-      <div class="cd" v-for='album in albums' v-if="(album.genre == select) || (select == 'All') || (select == '') ">
+      <div class="cd" v-for='album in sorted' v-if="(album.genre == select) || (select == 'All') || (select == '') ">
         <img :src="album.poster" :alt="album.title">
         <h3>{{ album.title }}</h3>
         <span class="author">{{ album.author }}</span>
         <span class="year">{{ album.year }}</span>
       </div>
     </div>
-
   </div>
 
  <script src="js/script.js" charset="utf-8"></script>
