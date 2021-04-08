@@ -11,8 +11,8 @@ var app = new Vue ({
     el: '#app',
     data: {
       albums:  [ ],
-      allGenre: [ ],
-
+      genre: [ "All", ],
+      select:"",
     },
 
     mounted: function() {
@@ -21,8 +21,8 @@ var app = new Vue ({
         this.albums = risposta.data.response;
         // console.log(this.albums);
         for (var i = 0; i < this.albums.length; i++) {
-          if (this.allGenre.includes(this.albums[i].genre)== false ) {
-            this.allGenre.push(this.albums[i].genre);
+          if (this.genre.includes(this.albums[i].genre)== false ) {
+            this.genre.push(this.albums[i].genre);
           }
         }
       });

@@ -23,14 +23,14 @@
       </div>
     </header>
     <div class="titolo">
-      <label for="genre">Select a genre</label>
-      <select id="genre" name="genre">
-        <option v-for="option in allGenre" value=""> {{option}}</option>
+      <label for="">Select a genre</label>
+      <select id="genre" name="genre" v-model="select">
+        <option v-for="genre in genre" :value="genre">{{genre}}</option>
       </select>
     </div>
 
     <div class="cds-container">
-      <div class="cd" v-for='album in albums'>
+      <div class="cd" v-for='album in albums' v-if="(album.genre == select) || (select == 'All') || (select == '') ">
         <img :src="album.poster" :alt="album.title">
         <h3>{{ album.title }}</h3>
         <span class="author">{{ album.author }}</span>
