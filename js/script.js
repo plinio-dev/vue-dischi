@@ -15,36 +15,17 @@ var app = new Vue ({
 
     },
 
-    // methods: {
-    //   genre: function() {
-    //     for (var i = 0; i < this.albums .length; i++) {
-    //
-    //         this.select.push(albums[i].genre);
-    //
-    //
-    //     }
-    //   }
-    // },
-
-
-
     mounted: function() {
       axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((risposta) => {
-        console.log(risposta);
+        // console.log(risposta);
         this.albums = risposta.data.response;
-        console.log(this.albums);
+        // console.log(this.albums);
         for (var i = 0; i < this.albums.length; i++) {
           if (this.allGenre.includes(this.albums[i].genre)== false ) {
-
             this.allGenre.push(this.albums[i].genre);
           }
-
-
         }
       });
-
-
-
     }
 
 });
