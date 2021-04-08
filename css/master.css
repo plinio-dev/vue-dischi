@@ -25,7 +25,14 @@ header .container {
 header .container img {
   height: 50px;
 }
-
+.titolo {
+  padding: 15px;
+}
+label {
+  font-size: 20px;
+  padding-right: 10px;
+  color: #ffffff;
+}
 .cds-container {
   display: flex;
   justify-content: center;

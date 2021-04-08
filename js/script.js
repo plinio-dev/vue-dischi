@@ -11,11 +11,39 @@ var app = new Vue ({
     el: '#app',
     data: {
       albums:  [ ],
+      select: [ ],
+
     },
-    mounted: function(){
+
+    // methods: {
+    //   genre: function() {
+    //     for (var i = 0; i < this.albums .length; i++) {
+    //
+    //         this.select.push(albums[i].genre);
+    //
+    //
+    //     }
+    //   }
+    // },
+
+
+
+    mounted: function() {
       axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((risposta) => {
+        console.log(risposta);
         this.albums = risposta.data.response;
-      })
+        // this.select = risposta.data.response.genre;
+        console.log(this.albums);
+        for (var i = 0; i < this.albums.length; i++) {
+
+            this.select.push(this.albums[i].genre);
+
+
+        }
+      });
+
+
+
     }
 
 });
